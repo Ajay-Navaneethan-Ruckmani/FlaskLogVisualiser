@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Uploaded Files</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>File name</th>
+                <th>File size</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for upload in uploads %}
+            <tr>
+                <td><a href="/download/{{ upload[0] }}">{{ upload[0] }}</a></td>
+                <td>{{ upload[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
